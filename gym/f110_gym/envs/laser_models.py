@@ -174,7 +174,7 @@ def get_scan(pose, theta_dis, fov, num_beams, theta_index_increment, sines, cosi
     # sweep through each beam
     for i in range(0, num_beams):
         # trace the current beam
-        scan[i] = trace_ray(pose[0], pose[1], theta_index, sines, cosines, eps, orig_x, orig_y, orig_c, orig_s, height, width, resolution, dt, max_range)
+        scan[i] = trace_ray(pose[0] + 0.261 * np.cos(pose[2]), pose[1] + 0.261 * np.sin(pose[2]), theta_index, sines, cosines, eps, orig_x, orig_y, orig_c, orig_s, height, width, resolution, dt, max_range)
 
         # increment the beam index
         theta_index += theta_index_increment
